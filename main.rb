@@ -46,7 +46,18 @@ loop do
         puts "Event added successfully"
         
         sleep(2)
+
     when 2
+
+        date=UserInterface.instance.get_date
+
+        events=Calendar.instance.get_date_events(date)
+
+        UserInterface.instance.list_events(events)
+
+        sleep(2)    
+    
+    when 3
         break
     else
 		correct_option=false
