@@ -77,6 +77,22 @@ loop do
         sleep(2)    
 
     when 4
+        # Deleting Event  
+        date=UserInterface.instance.get_date
+
+        events=Calendar.instance.get_date_events(date)
+        
+        UserInterface.instance.list_events(events)
+        
+        title=UserInterface.instance.get_event_title(events)
+
+        Calendar.instance.delete_event(date, title)
+        puts "Event deleted successfully"
+
+        sleep(2)    
+    
+    
+    when 5
         break
     else
 		correct_option=false
