@@ -58,6 +58,25 @@ loop do
         sleep(2)    
     
     when 3
+		# Getting date to show event  
+        date=UserInterface.instance.get_date
+
+        events=Calendar.instance.get_date_events(date)
+        
+        UserInterface.instance.list_events(events)
+        
+        
+        title=UserInterface.instance.get_event_title(events)
+        
+        print "Enter new description: "
+        description=gets.chomp
+
+        Calendar.instance.edit_event(date,title,description)
+
+        puts "Event updated successfully"
+        sleep(2)    
+
+    when 4
         break
     else
 		correct_option=false
