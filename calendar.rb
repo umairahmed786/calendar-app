@@ -33,5 +33,10 @@ class Calendar
     def delete_event(date, title)
         events[date.year][date.mon][date.mday].delete_if {|event| event.title==title}
     end
+
+    def get_month_events(year,month)
+        events[year][month]
+    end
+
 end
 

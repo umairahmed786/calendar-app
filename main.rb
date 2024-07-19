@@ -12,16 +12,19 @@ loop do
     puts "2. Show Events List"
     puts "3. Edit Event"
 	puts "4. Delete Event"
-    puts "5. Exit"
+    puts "5. Month View"
+    puts "6. Exit"
 	
 	correct_option ? puts("Choose Option") : puts("Choose correct option")
 
 	choice=gets.chomp.to_i
 
 	case choice
+
 	when 0
 		puts "Oops! You can only enter integer"
-	when 1
+	
+    when 1
         
         date=UserInterface.instance.get_date
 
@@ -45,7 +48,7 @@ loop do
         Calendar.instance.add_event(date,title,description)
         puts "Event added successfully"
         
-        sleep(2)
+        gets.chomp
 
     when 2
 
@@ -55,7 +58,7 @@ loop do
 
         UserInterface.instance.list_events(events)
 
-        sleep(2)    
+        gets.chomp   
     
     when 3
 		# Getting date to show event  
@@ -74,7 +77,8 @@ loop do
         Calendar.instance.edit_event(date,title,description)
 
         puts "Event updated successfully"
-        sleep(2)    
+        
+        gets.chomp    
 
     when 4
         # Deleting Event  
@@ -89,10 +93,19 @@ loop do
         Calendar.instance.delete_event(date, title)
         puts "Event deleted successfully"
 
-        sleep(2)    
-    
+        gets.chomp   
     
     when 5
+        
+        # print "Enter year (YYYY): "
+        year = UserInterface.instance.get_year
+        month = UserInterface.instance.get_month
+        events=Calendar.instance.get_month_events(year,month)
+        UserInterface.instance.month_view(year,month,events)
+        
+        gets.chomp
+    
+    when 6
         break
     else
 		correct_option=false
