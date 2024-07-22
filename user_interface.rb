@@ -62,6 +62,7 @@ class UserInterface
   end
 
   def list_events(events)
+
     if events.empty?
       puts 'No event to show'
     else

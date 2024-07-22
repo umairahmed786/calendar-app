@@ -16,7 +16,7 @@ loop do
   case choice
   when 0
     puts 'Please enter valid input.'
-
+    
   when 1
     date = user_interface.get_date
     title = user_interface.input_and_check_uniqueness_of_title(date)
