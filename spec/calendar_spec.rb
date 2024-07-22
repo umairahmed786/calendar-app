@@ -3,11 +3,9 @@ require 'date'
 require_relative '../calendar'
 require_relative '../event'
 
-# frozen_string_literal: true
-
 describe Calendar do
-  let(:date) {Date.parse('2020-12-12')}
-  let(:event) {Event.new('Session', 'A new hire session.')}
+  let(:date) { Date.parse('2020-12-12') }
+  let(:event) { Event.new('Session', 'A new hire session.') }
 
   describe 'add_event' do
     it 'add event in the events list' do
@@ -32,5 +30,4 @@ describe Calendar do
       expect(Calendar.instance.events[date.year][date.mon][date.mday]).to eq([])
     end
   end
-
 end
