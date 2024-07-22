@@ -29,17 +29,7 @@ loop do
 
     # Getting title
     title = UserInterface.instance.get_new_title(date)
-    # loop do
-    #   print "Enter title: "
-    #   title = gets.chomp
-    #   if title.empty?
-    #     print "Title cannot be empty. Please enter a valid title: "
-    #   elsif Calendar.instance.validate_event(date, title)
-    #     print "Event with same title exists. Please enter a valid title: "
-    #   else
-    #     break
-    #   end
-    # end
+   
 
     # Getting description of the event
     print "Enter description: "

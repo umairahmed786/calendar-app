@@ -1,3 +1,4 @@
+# It creates an event with the title and description.
 class Event
   attr_reader :title
   attr_accessor :description

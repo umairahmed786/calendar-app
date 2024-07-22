@@ -1,6 +1,7 @@
 require 'singleton'
 require_relative 'event.rb'
 
+# Class that contains events and hadle all the functionality related to events
 class Calendar
   include Singleton
   attr_accessor :events

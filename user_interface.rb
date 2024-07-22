@@ -18,7 +18,7 @@ class UserInterface
   end
 
   def get_new_title(date)
-    title=nil
+    # title = nil
     loop do
       print "Enter title: "
       title = gets.chomp
@@ -61,7 +61,7 @@ class UserInterface
 
   def list_events(events)
     unless events.empty?()
-      events.each {|event| display_event(event)}
+      events.each { |event| display_event(event) }
     else
       puts "No event to show"
     end
